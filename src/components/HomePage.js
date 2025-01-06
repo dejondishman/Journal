@@ -43,6 +43,11 @@ const HomePage = () => {
           username={post.username}
         />
       ))}
+      <div className="fixed bottom-20 right-4 z-10">
+        <button className="bg-blue-500 text-white rounded-full p-4 shadow-lg hover:bg-blue-600">
+          Create
+        </button>
+      </div>
     </div>
   );
 };

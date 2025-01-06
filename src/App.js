@@ -12,7 +12,16 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<Search />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route
+            path="/profile"
+            element={
+              <Profile
+                image="/assets/profile.jpg"
+                name="david"
+                bio="this is the bio for my app "
+              />
+            }
+          />
           <Route path="/notifications" element={<Notifications />} />
         </Routes>
         <BottomNavigationBar />

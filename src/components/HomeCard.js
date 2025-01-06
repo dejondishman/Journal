@@ -1,6 +1,12 @@
 import { FaHeart, FaShareAlt, FaComment } from "react-icons/fa";
+import { useState } from "react";
 
 const HomeCard = ({ image, title, description, userImage, username }) => {
+  const [liked, setLiked] = useState(false);
+  const toggleLike = () => {
+    setLiked(!liked);
+  };
+
   return (
     <div className="bg-white border border-gray-200 rounded-xl shadow-lg overflow-hidden mb-6 max-w-xl mx-auto">
       {/* User Profile Section */}
@@ -31,9 +37,13 @@ const HomeCard = ({ image, title, description, userImage, username }) => {
       {/* Footer */}
       <div className="flex justify-between p-4 border-t border-gray-200">
         <div className="flex space-x-4">
-          <button className="text-gray-500 hover:text-red-500">
+          <button
+            onClick={toggleLike}
+            className={`text-gray-500 ${liked ? "text-red-500" : ""}`}
+          >
             <FaHeart size={20} />
           </button>
+
           <button className="text-gray-500 hover:text-blue-500">
             <FaShareAlt size={20} />
           </button>
