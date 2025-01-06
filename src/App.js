@@ -1,30 +1,21 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Removed Switch
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import Search from "./components/Search";
 import Profile from "./components/Profile";
-import JournalPage from "./components/JournalPage";
-import BottomNavBar from "./components/BottomNavBar";
+import Notifications from "./components/Notifications";
+import BottomNavigationBar from "./components/BottomNavBar"; // Import the BottomNavigationBar component
 
 function App() {
   return (
     <Router>
       <div>
-        <nav className="p-4">
-          <ul className="flex  space-x-6">
-            <h1>Logo</h1>
-            <li>
-              <a href="/">Profile</a>
-            </li>
-            <li>
-              <a href="/journal">Journal</a>
-            </li>
-          </ul>
-        </nav>
-
         <Routes>
-          <Route path="/" element={<Profile />} />
-          <Route path="/journal" element={<JournalPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/notifications" element={<Notifications />} />
         </Routes>
-        <BottomNavBar />
+        <BottomNavigationBar />
       </div>
     </Router>
   );
